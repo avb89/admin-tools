@@ -1,0 +1,20 @@
+{
+    "name": "PowerShell Development",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "terminal.integrated.defaultProfile.linux": "pwsh"
+    },
+    "extensions": [
+      "ms-vscode.powershell", // PowerShell extension
+      "ms-azuretools.vscode-docker" // Docker extension
+    ],
+    "postCreateCommand": "pwsh -Command \"Write-Host 'Container ready!'\"",
+    "remoteUser": "root",
+    "mounts": [
+      "source=${localWorkspaceFolder},target=/workspace,type=bind"
+    ],
+    "workspaceFolder": "/workspace"
+  }
+  
